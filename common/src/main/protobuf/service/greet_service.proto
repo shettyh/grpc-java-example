@@ -1,13 +1,17 @@
+//Greet message gRPC service
+//author: shettyh
 syntax = "proto3";
 
 package grpc.example.service;
 
 import "message/greet.proto";
+//Just a place holder for empty response
 import "google/protobuf/empty.proto";
 
 option java_package = "com.grpc.example.service";
 option java_outer_classname = "GreetService";
 
 service Greet {
+    //Sends the message to the server
     rpc SendMessage (GreetMessage) returns (google.protobuf.Empty);
 }
