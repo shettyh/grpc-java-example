@@ -17,7 +17,7 @@ public class GreetServiceImpl extends GreetGrpc.GreetImplBase {
 
     @Override
     public void sendMessage(Greet.GreetMessage request, StreamObserver<Empty> responseObserver) {
-        LOG.info("Go the message :" + request.getGreeting());
+        LOG.info("Got the message :" + request.getGreeting());
         responseObserver.onNext(Empty.newBuilder().build());
         responseObserver.onCompleted();
     }
