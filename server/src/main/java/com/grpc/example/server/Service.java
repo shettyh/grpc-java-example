@@ -1,6 +1,5 @@
 package com.grpc.example.server;
 
-import com.grpc.example.service.GreetService;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 
@@ -30,6 +29,11 @@ public class Service {
     public void waitForCompletion() throws InterruptedException {
         if (_Server != null)
             _Server.awaitTermination();
+    }
+
+    public void stop() {
+        if (_Server != null)
+            _Server.shutdown();
     }
 
 }
